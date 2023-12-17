@@ -1,0 +1,15 @@
+﻿  FourthProject.cpp
+C:\Users\apeNPC\Desktop\GitHubPower\C++Basics-Dec2023\TestFolder\FourthProject\FourthProject.cpp(13,15): error C2131: expression did not evaluate to a constant
+  C:\Users\apeNPC\Desktop\GitHubPower\C++Basics-Dec2023\TestFolder\FourthProject\FourthProject.cpp(13,15):
+  failure was caused by a read of a variable outside its lifetime
+  C:\Users\apeNPC\Desktop\GitHubPower\C++Basics-Dec2023\TestFolder\FourthProject\FourthProject.cpp(13,15):
+  see usage of 'rows'
+  
+C:\Users\apeNPC\Desktop\GitHubPower\C++Basics-Dec2023\TestFolder\FourthProject\FourthProject.cpp(13,21): error C2131: expression did not evaluate to a constant
+  C:\Users\apeNPC\Desktop\GitHubPower\C++Basics-Dec2023\TestFolder\FourthProject\FourthProject.cpp(13,21):
+  failure was caused by a read of a variable outside its lifetime
+  C:\Users\apeNPC\Desktop\GitHubPower\C++Basics-Dec2023\TestFolder\FourthProject\FourthProject.cpp(13,21):
+  see usage of 'cols'
+  
+C:\Users\apeNPC\Desktop\GitHubPower\C++Basics-Dec2023\TestFolder\FourthProject\FourthProject.cpp(17,17): warning C4552: '>>': result of expression not used
+C:\Users\apeNPC\Desktop\GitHubPower\C++Basics-Dec2023\TestFolder\FourthProject\FourthProject.cpp(35,1): error C2036: 'int [rows][cols]': unknown size
