@@ -1,2 +1,2 @@
-# My-C-Tasks-and-Solutions
-Just Some Task and Solutions using C++ to Improve My Skills
+# CPPCourseEGT
+Homework and exercises for EGT course.
