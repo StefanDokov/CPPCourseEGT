@@ -1,5 +1,6 @@
 #include <iostream>
 #include <sstream>
+#include <string>
 #include <vector>
 #include <memory>
 #include <exception>
@@ -16,22 +17,73 @@ struct RoadSegment {
 
 class BaseRoad {
 public:
-    virtual int minSpeedAt(double meters) const = 0;
-    virtual int maxSpeedAt(double meters) const = 0;
+    //virtual int minSpeedAt(double meters) const = 0;
+    //virtual int maxSpeedAt(double meters) const = 0;
     virtual int totalLength() const = 0;
     // virtual int getHoles() const = 0;
-    virtual double getDamagePercent(double meters, int speed) const = 0;
+    //virtual double getDamagePercent(double meters, int speed) const = 0;
 
     virtual ~BaseRoad() {};
 };
 
 class SimpleRoad : public BaseRoad {
+public:
+    SimpleRoad(double len, int min, int max) {
+        this->lenMeters = len;
+        this->minSpeed = min;
+        this->maxSpeed = max;
+    }
+    int totalLength() const override {
+        return this->lenMeters * this->maxSpeed;
+    }
 private:
     int minSpeed;
     int maxSpeed;
     double lenMeters;
 };
 
+class AnotherRoad : public BaseRoad {
+public:
+    AnotherRoad(int l, int mi, int ma, int h) {
+        this->lengh = l;
+        this->mina = mi;
+        this->maxa = ma;
+        this->hols = h;
+    }
+    int totalLength() const override {
+        return this->lengh + this->hols;
+    }
+
+private:
+    int lengh;
+    int mina;
+    int maxa;
+    int hols;
+};
+std::unique_ptr<BaseRoad> roadFactory(std::string choice) {
+    if (choice == "Simple") {
+        double l;
+        int min;
+        int max;
+        std::cout << "Enter length, min speed and max speed" << std::endl;
+        std::cin >> l >> min >> max;
+        return std::make_unique<SimpleRoad>(l, min, max);
+    }
+    else if (choice == "Another") {
+        int l;
+        int min;
+        int max;
+        int hols;
+        std::cout << "Enter length, min speed and max speed" << std::endl;
+        std::cin >> l >> min >> max >> hols;
+        return std::make_unique<AnotherRoad>(l, min, max,hols);
+    }
+    else{
+
+    
+        return nullptr; // Handle invalid choice as needed
+    }
+}
 class CombineRoad : public BaseRoad {
 public:
 
@@ -158,14 +210,19 @@ private:
 };
 
 int main() {
-    Controller ctl;
-    ctl.addCar();
-    ctl.addRoad();
+    //Controller ctl;
+    //ctl.addCar();
+    //ctl.addRoad();
 
-    for (int i = 0; i < 10; ++i) {
-        ctl.loop();
-        // sleep(1);
-    }
+    //for (int i = 0; i < 10; ++i) {
+    //    ctl.loop();
+    //    // sleep(1);
+    //}
+    std::unique_ptr<BaseRoad> road1 = roadFactory("Simple");
+    std::unique_ptr<BaseRoad> road2 = roadFactory("Another");
+
+    std::cout << road1->totalLength() << std::endl;
+    std::cout << road2->totalLength() << std::endl;
 
     return 0;
 }
