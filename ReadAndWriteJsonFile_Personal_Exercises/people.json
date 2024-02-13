@@ -1,0 +1,28 @@
+{
+  "people": [
+    {
+      "name": "John Doe",
+      "age": 30,
+      "gender": "male",
+      "occupation": "Software Engineer"
+    },
+    {
+      "name": "Jane Smith",
+      "age": 25,
+      "gender": "female",
+      "occupation": "Data Scientist"
+    },
+    {
+      "name": "Michael Johnson",
+      "age": 35,
+      "gender": "male",
+      "occupation": "Doctor"
+    },
+    {
+      "name": "Emily Davis",
+      "age": 28,
+      "gender": "female",
+      "occupation": "Teacher"
+    }
+  ]
+}
