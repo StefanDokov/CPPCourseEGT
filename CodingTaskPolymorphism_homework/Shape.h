@@ -5,6 +5,11 @@ using namespace std;
 
 class Shape {
 public:
-	virtual double area() = 0;
-	//abstract class. area() must be override in children classes
+	Shape(string);
+	virtual ~Shape() {};
+	void draw();
+	virtual double area();
+	//area() must be override in children classes
+protected:
+	string color;
 };

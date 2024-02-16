@@ -6,11 +6,14 @@
 
 int main()
 {
-    Circle c("blue");
-    Rectangle b("green");
+    Shape s("red");
+    s.draw();
 
+    Circle c("blue");
     c.draw();
     //output is "Drawing a blue circle"
+
+    Rectangle b("green");
     b.draw();
     //output is "Drawing a green rectangle"
 }

@@ -14,8 +14,14 @@ void printArea(Shape* b) //take pointer of object type Shape
 
 int main()
 {
-    Circle c(5);
-    Rectangle r(6, 5);
+    Shape s("green");
+    s.draw();
+    Circle c("red",5);
+    c.draw();
+    Rectangle r("blue", 6, 5);
+    r.draw();
+
+    printArea(&s);
 
     printArea(&c);
     // ouput is "Area: 78.54"
